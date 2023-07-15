@@ -37,8 +37,6 @@
           </nav>
     </header>
     <div id="content-index">
-
- 
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -69,7 +67,48 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div>
+        <h2>¿Qué es la Formula 1?</h2>
+        <p>La Fórmula 1 es la cúspide del automovilismo y la categoría más alta de las carreras de monoplazas. 
+          La F1 compite con coches de ruedas abiertas (es decir, fuera del cuerpo principal del vehículo), 
+          tanto en circuitos permanentes como en circuitos urbanos. La F1 visita cada temporada lugares tradicionales 
+          de competición como el Reino Unido, Mónaco, Italia y Bélgica, y recientemente se ha aventurado en nuevos 
+          territorios como Arabia Saudita, Singapur, los Países Bajos y Azerbaiyán, por ejemplo. <br>
+          La F1 tiene una estructura de competición en la que participan 10 equipos, con dos pilotos por equipo. 
+          Se trata de un formato de tabla de clasificación, en el que se acumulan puntos a lo largo de la temporada 
+          (más adelante se hablará de ello). </p>
+      </div>
+      <div>
+        <form  id="form">
+          <h2>Encuesta sobre la Fórmula 1</h2>
+          
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="age">Edad:</label>
+          <input type="number" id="age" name="age" required>
+          
+          <label for="favoriteDriver">Piloto favorito:</label>
+          <input type="text" id="favoriteDriver" name="favoriteDriver" required>
+          
+          <label for="bestTeam">Mejor equipo:</label>
+          <select id="bestTeam" name="bestTeam" required>
+            <option value="">Seleccionar equipo</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Red Bull Racing">Red Bull Racing</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="McLaren">McLaren</option>
+            <option value="Other">Otro</option>
+          </select>
+          
+          <label for="suggestions">Sugerencias:</label>
+          <textarea id="suggestions" name="suggestions" rows="4" cols="50"></textarea>
+          
+          <input type="submit" value="Enviar">
+        </form>
+      </div>
   </div>
+
     <footer>
 
     </footer>

@@ -1,4 +1,5 @@
 let driverJson = '';
+let poll = {};
 function cargarResultado(){
     
     //console.log("iniciado");
@@ -131,24 +132,22 @@ function cargarEquipos(){
     //console.log(data.MRData.RaceTable.Races[0].Results[0]);
     data.MRData.ConstructorTable.Constructors.forEach(item => {
         // Generar contenido HTML para cada fila de la tabla
-        driverJson += `<div class="card-team">
-                            <div class="content-card-team">
-                                <div class="top-content-card">
-                                    <div class="name-card">
-                                        <p>${item.name}</p>
-                                    </div>
-                                    <div class="img-card-logo" id="img-logo-${item.constructorId}">
-
-                                    </div>
-                                </div>
-                                <div class="bottom-content-card">
-                                    <div class="img-card-car" id="img-car-${item.constructorId}">
-
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>`;
-        
+        driverJson += 
+        `<div class="card-team">
+            <div class="content-card-team">
+                <div class="top-content-card">
+                    <div class="name-card">
+                        <p>${item.name}</p>
+                    </div>
+                    <div class="img-card-logo" id="img-logo-${item.constructorId}">
+                    </div>
+                </div>
+                <div class="bottom-content-card">
+                    <div class="img-card-car" id="img-car-${item.constructorId}">
+                    </div>
+                </div>
+            </div> 
+        </div>`;
     });
     // 3. Insertar contenido HTML en el DOM
     document.getElementById('content-teams').innerHTML = driverJson;
@@ -179,3 +178,29 @@ function imgCargarEquipos(){
     });
     });
 }
+    
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se envíe el formulario por defecto
+      
+        // Obtener los valores de los campos del formulario
+        var name = document.getElementById('name').value;
+        var age = document.getElementById('age').value;
+      
+        // Crear un objeto con los datos del formulario
+        var formData = {
+          name: name,
+          age: age
+        };
+      
+        // Obtener el array existente en el localStorage o crear uno nuevo si no existe
+        var data = JSON.parse(localStorage.getItem('formDataArray')) || [];
+      
+        // Agregar los nuevos datos al array
+        data.push(formData);
+      
+        // Guardar el array actualizado en el localStorage
+        localStorage.setItem('formDataArray', JSON.stringify(data));
+      
+
+      });
+  
