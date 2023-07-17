@@ -178,29 +178,35 @@ function imgCargarEquipos(){
     });
     });
 }
-    
-    document.getElementById('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario por defecto
-      
-        // Obtener los valores de los campos del formulario
-        var name = document.getElementById('name').value;
-        var age = document.getElementById('age').value;
-      
-        // Crear un objeto con los datos del formulario
-        var formData = {
-          name: name,
-          age: age
-        };
-      
-        // Obtener el array existente en el localStorage o crear uno nuevo si no existe
-        var data = JSON.parse(localStorage.getItem('formDataArray')) || [];
-      
-        // Agregar los nuevos datos al array
-        data.push(formData);
-      
-        // Guardar el array actualizado en el localStorage
-        localStorage.setItem('formDataArray', JSON.stringify(data));
-      
 
-      });
-  
+function guardarDatos(){
+ // Obtener los valores de los campos del formulario
+ var name = document.getElementById('name');
+ var age = document.getElementById('age');
+ var team = document.getElementById('bestTeam');
+ var driver = document.getElementById('favoriteDriver');
+ var opinion = document.getElementById('suggestions');
+ // Crear un objeto con los datos del formulario
+ var formData = {
+   name: name.value,
+   age: age.value,
+   team: team.value,
+   driver: driver.value,
+   opinion: opinion.value
+ };
+
+ // Obtener el array existente en el localStorage o crear uno nuevo si no existe
+ var data = JSON.parse(localStorage.getItem('DataArray')) || [];
+
+ // Agregar los nuevos datos al array
+ data.push(formData);
+
+ // Guardar el array actualizado en el localStorage
+ localStorage.setItem('DataArray', JSON.stringify(data));
+ name.value = '';
+ age.value= '';
+ team.selectedIndex = 0;
+ driver.selectedIndex = 0;
+ opinion.value='';
+ alert("Gracias por su opinion");
+}
